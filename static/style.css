@@ -69,3 +69,40 @@ nav ul img {
     align-items: center;
     background-color: white;
 }
+
+#developers {
+    grid-column-start: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+    
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.about-developer {
+    padding: 5px 10px;
+
+}
+#daniel {
+    text-align: left;
+}
+
+
+#kalicia {
+    text-align: center;
+}
+#doug {
+    text-align: left;
+}
+
+.name {
+    padding-left: 20px;
+}
