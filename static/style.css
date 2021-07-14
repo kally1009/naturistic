@@ -51,8 +51,8 @@ nav ul img{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 10px;
-    text-align: center;
+    padding: 20px;
+    text-align: left;
     
 }
 
@@ -60,10 +60,25 @@ nav ul img{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    padding: 10px;
+    padding: 5px;
 }
 
 .about-developer {
-    padding: 20px 10px;
+    padding: 5px 10px;
 
+}
+#daniel {
+    text-align: left;
+}
+
+
+#kalicia {
+    text-align: center;
+}
+#doug {
+    text-align: left;
+}
+
+.name {
+    padding-left: 20px;
 }
