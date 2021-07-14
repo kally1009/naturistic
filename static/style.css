@@ -1,9 +1,46 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: SF Pro;
 }
 
 #app {
     display: grid;
-    grid-template-columns: 1fr 1000px 1fr;
+    grid-template-columns: 1fr 800px 1fr;
+}
+
+nav {
+    display: grid;
+    grid-column: 1/4;
+    grid-template-columns: 1fr 200px 600px 1fr;
+    height: 50px;
+}
+
+nav ul {
+    grid-column-start: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav ul li{
+    font-size: 16px;
+    padding-left: 20px;
+    padding-top: 20px;
+    list-style: none;
+    font-weight: bold;
+}
+
+nav ul img{
+    padding-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    grid-column-start: 2;
+    display: flex;
+    align-items: center;
 }
