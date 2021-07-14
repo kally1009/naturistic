@@ -53,8 +53,18 @@ nav ul img {
     height: 400px;
     grid-column: 1/4;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 50px 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.body-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-column-start: 2;
+    font-size: 18px;
+    color: white;
+    padding-bottom: 10px;
 }
 
 .search-bar {
@@ -62,13 +72,28 @@ nav ul img {
     grid-row-start: 2;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .search-bar input {
+    background-color: white;
+    height: 40px;
+    width: 500px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.search-icon{
     display: flex;
+    justify-content: center;
     align-items: center;
     background-color: white;
+    height: 40px;
+    padding: 0px 10px;
 }
+
+
+/* About */
 
 #developers {
     grid-column-start: 2;
