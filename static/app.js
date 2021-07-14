@@ -18,6 +18,7 @@ var app = new Vue({
         ]
 
     },
+    vuetify: new Vuetify(), 
     computed: {
         filteredProducts: function(){
             var product_array = this.products;
