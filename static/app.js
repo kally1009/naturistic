@@ -19,7 +19,7 @@ var app = new Vue({
 
     },
     computed: {
-        filteredArticles: function(){
+        filteredProducts: function(){
             var product_array = this.products;
             var searchString=this.searchString
             searchString = searchString.trim().toLowerCase();
