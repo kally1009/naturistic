@@ -44,3 +44,26 @@ nav ul img{
     display: flex;
     align-items: center;
 }
+
+
+#developers {
+    grid-column-start: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.about-developer {
+    padding: 20px 10px;
+
+}
