@@ -25,14 +25,26 @@
             <img src="../images/cart-alt.svg" alt="" height="25px">
           </ul>
         </nav>
-        <div id="developers">
+        <v-card 
+            max-width= "800"
+            id="developers"
+            elvation="14"
+            class="mx-auto"
+            
+            >
             <h1>The Developers</h1>
-            <br>
-            <br>
-            <div id="daniel">
-                <h3 class="name">Daniel Urias</h3>
+            <v-spacer></v-spacer>
+            <v-spacer></v-spacer>
+            <v-container>
+            <v-row dense>
+                <v-col cols="12">
+            <v-card
+            
+            color="#006064"
+            >
+                <v-card-title class="white" class="text-h3" >Daniel Urias</v-card-title>
                 <div class="profile-section">
-                    <section class="about-developer">
+                    <section class="white" class="about-developer">
                         Lorem ipsum dolor sit amet, 
                         consectetur adipiscing elit, sed do eiusmod 
                         tempor incididunt ut labore et dolore magna aliqua.
@@ -46,9 +58,11 @@
                     <img src="../images/sun_mountain.jpg" alt="Daniel" width="300px">
                     
                 </div>
+                </v-card>
+            </v-col>
 
 
-            </div>
+            
             <br>
             <br>
             <div id="kalicia">
@@ -82,18 +96,11 @@
                      deserunt mollit anim id est laborum.</section>
                      <img src="../images/lake.jpg" alt="Doug" width="300px">
                 </div>
-
             </div>
-
-
-
         </div>
-
-
-
-
-
-    </div>
+    </v-row>
+    </v-container>
+    </v-card>
   
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

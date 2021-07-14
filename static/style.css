@@ -93,6 +93,7 @@ nav ul img {
 }
 #daniel {
     text-align: left;
+
 }
 
 
@@ -105,4 +106,7 @@ nav ul img {
 
 .name {
     padding-left: 20px;
+}
+.white {
+    color: white;
 }
