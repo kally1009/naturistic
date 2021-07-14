@@ -13,7 +13,7 @@ nav {
     display: grid;
     grid-column: 1/4;
     grid-template-columns: 1fr 200px 600px 1fr;
-    height: 50px;
+    height: 60px;
 }
 
 nav ul {
@@ -24,17 +24,15 @@ nav ul {
     justify-content: flex-end;
 }
 
-nav ul li{
+nav ul li {
     font-size: 16px;
     padding-left: 20px;
-    padding-top: 20px;
     list-style: none;
     font-weight: bold;
 }
 
-nav ul img{
+nav ul img {
     padding-left: 20px;
-    margin-top: 20px;
     display: flex;
     align-items: center;
 }
@@ -43,4 +41,31 @@ nav ul img{
     grid-column-start: 2;
     display: flex;
     align-items: center;
+}
+
+/* Hero */
+
+#hero-section {
+    background-image: url("../images/desert_mountains.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.search-bar {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    display: flex;
+    align-items: center;
+    background-color: white;
 }
