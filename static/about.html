@@ -32,19 +32,18 @@
             class="mx-auto"
             
             >
-            <h1>The Developers</h1>
-            <v-spacer></v-spacer>
+            <v-card-title p="3" class="text-h1">The Developers</v-card-title>
             <v-spacer></v-spacer>
             <v-container>
             <v-row dense>
                 <v-col cols="12">
             <v-card
-            
+            p="7"
             color="#006064"
             >
                 <v-card-title class="white" class="text-h3" >Daniel Urias</v-card-title>
                 <div class="profile-section">
-                    <section class="white" class="about-developer">
+                    <v-card-subtitle class="white" class="about-developer">
                         Lorem ipsum dolor sit amet, 
                         consectetur adipiscing elit, sed do eiusmod 
                         tempor incididunt ut labore et dolore magna aliqua.
@@ -54,22 +53,44 @@
                         esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
                         occaecat cupidatat non proident, sunt in culpa qui officia 
                         deserunt mollit anim id est laborum.
-                    </section>
-                    <img src="../images/sun_mountain.jpg" alt="Daniel" width="300px">
+                    </v-card-subtitle>
+                    <v-card-subtitle><v-img contain src="../images/sun_mountain.jpg" width="300"></v-img></v-card-subtitle>
                     
                 </div>
                 </v-card>
             </v-col>
+            <v-spacer></v-spacer>
+            <v-col cols="12">
+            <v-card 
+            p="7"
+            color="#006064">
 
-
-            
-            <br>
-            <br>
-            <div id="kalicia">
-                <h3 class="name">Kalicia Adams</h3>
+                <v-card-title class="white" class="text-h3">Kalicia Adams</v-card-title>
                 <div class="profile-section">
-                    <img src="../images/wave.jpg" alt="Kalicia" width="300px">
-                <section class="about-developer">Lorem ipsum dolor sit amet, 
+                    <v-card-subtitle> <v-img contain src="../images/kalicia.jpg" width="300"></v-img></v-card-subtitle>
+                    <v-card-subtitle class="white" class="about-developer">Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, sed do eiusmod 
+                    tempor incididunt ut labore et dolore magna aliqua.
+                     Ut enim ad minim veniam, quis nostrud exercitation 
+                     ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        <v-spacer></v-spacer>
+                        <br>
+                        <v-btn raised elevation="5"><a href="https://www.linkedin.com/in/kalicia-adams-2b489a207" class="link" target="_blank">LinkedIn</a></v-btn>
+                    </v-card-subtitle>
+                     
+                </div>
+              </v-card>
+            </v-col>
+
+            <v-col col="12">
+            <v-card 
+            p="7"
+            color="#006064"
+
+            >
+                <v-card-title class="white" class="name">Doug Osborn</v-card-title>
+                <div class="profile-section">
+                <v-card-subtitle class="white" class="about-developer">Lorem ipsum dolor sit amet, 
                     consectetur adipiscing elit, sed do eiusmod 
                     tempor incididunt ut labore et dolore magna aliqua.
                      Ut enim ad minim veniam, quis nostrud exercitation 
@@ -77,30 +98,18 @@
                      Duis aute irure dolor in reprehenderit in voluptate velit 
                      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
                      occaecat cupidatat non proident, sunt in culpa qui officia 
-                     deserunt mollit anim id est laborum.</section>
+                     deserunt mollit anim id est laborum.</v-card-subtitle>
+                     <v-card-subtitle><v-img contain src="../images/lake.jpg" width="300"></v-img></v-card-subtitle>
                 </div>
-            </div>
-            <br>
-            <br>
-            <div id="doug">
-                <h3 class="name">Doug Osborn</h3>
-                <div class="profile-section">
-                <section class="about-developer">Lorem ipsum dolor sit amet, 
-                    consectetur adipiscing elit, sed do eiusmod 
-                    tempor incididunt ut labore et dolore magna aliqua.
-                     Ut enim ad minim veniam, quis nostrud exercitation 
-                     ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                     Duis aute irure dolor in reprehenderit in voluptate velit 
-                     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-                     occaecat cupidatat non proident, sunt in culpa qui officia 
-                     deserunt mollit anim id est laborum.</section>
-                     <img src="../images/lake.jpg" alt="Doug" width="300px">
-                </div>
-            </div>
-        </div>
+            </v-card>
+        </v-col>
     </v-row>
     </v-container>
     </v-card>
+    <v-footer>
+
+
+    </v-footer>
   
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

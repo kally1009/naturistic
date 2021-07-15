@@ -113,25 +113,20 @@ nav ul img {
 }
 
 .about-developer {
-    padding: 5px 10px;
-
-}
-#daniel {
-    text-align: left;
+    padding: 20px;
+    margin: 0px;
 
 }
 
-
-#kalicia {
-    text-align: center;
-}
-#doug {
-    text-align: left;
-}
 
 .name {
     padding-left: 20px;
 }
 .white {
     color: white;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
 }
