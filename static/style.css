@@ -134,6 +134,9 @@ nav ul img {
 .white {
     color: white;
 }
+.primary-color {
+    background-color: #006064;
+}
 
 .link {
     text-decoration: none;
@@ -145,4 +148,17 @@ a {
 }
 .mr-icon {
     margin-right: 10px;
+}
+
+.collection {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    text-transform: none;
+}
+
+#about-c {
+    grid-column:2;
+}
+#nav-color {
+    color: black;
 }

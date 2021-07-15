@@ -17,14 +17,41 @@
 
   <body>
     <div id="app">
+      <div id="about-c">
+      <v-app>
+        <v-main >
+          <v-container>
         <nav>
           <div id="logo">
             <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
           </div>
           <ul>
-            <a><li>Home</li></a>
-            <a><li>Collection</li></a>
-            <a herf="about.html"><li>About</li></a>
+            <li><v-menu
+              open-on-hover
+              offset-y
+              >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  small
+                  elevation="0"
+                  v-bind="attrs"
+                  v-on="on"
+                  color="#FFFFFF"
+                  text
+                ><li class="collection">Collection</li>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="(category, index) in categories"
+                  :key="index"
+                >
+                  <v-list-item-title>{{ category }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+
+            </v-menu>
+            <a  id="nav-color" href="about.html"><li>About</li></a>
             <img src="../images/cart-alt.svg" alt="" height="25px">
           </ul>
         </nav>
@@ -35,18 +62,19 @@
             class="mx-auto"
             
             >
-            <v-card-title p="3" class="text-h1"><strong>The Developers</strong></v-card-title>
+            <v-card-title p="3" class="text-h5"><strong>The Developers</strong></v-card-title>
             <v-spacer></v-spacer>
             <v-container>
             <v-row dense>
                 <v-col cols="12">
             <v-card
             p="7"
-            color="#006064"
+            color="cyan darken-4"
+            class="white--text"
             >
-                <v-card-title class="white" class="text-h3" >Daniel Urias</v-card-title>
+                <v-card-title class="text-h6">Daniel Urias</v-card-title>
                 <div class="profile-section">
-                    <v-card-subtitle class="white" class="about-developer">
+                    <v-card-subtitle class="about-developer" color="#006064">
                         Lorem ipsum dolor sit amet, 
                         consectetur adipiscing elit, sed do eiusmod 
                         tempor incididunt ut labore et dolore magna aliqua.
@@ -66,12 +94,13 @@
             <v-col cols="12">
             <v-card 
             p="7"
-            color="#006064">
+            color="#006064"
+            class="white--text">
 
-                <v-card-title class="white" class="text-h3">Kalicia Adams</v-card-title>
+                <v-card-title class="text-h6">Kalicia Adams</v-card-title>
                 <div class="profile-section">
                     <v-card-subtitle> <v-img contain src="../images/kalicia.jpg" width="300"></v-img></v-card-subtitle>
-                    <v-card-subtitle class="white" class="about-developer">Lorem ipsum dolor sit amet, 
+                    <v-card-subtitle class="about-developer">Lorem ipsum dolor sit amet, 
                     consectetur adipiscing elit, sed do eiusmod 
                     tempor incididunt ut labore et dolore magna aliqua.
                      Ut enim ad minim veniam, quis nostrud exercitation 
@@ -90,11 +119,11 @@
             <v-card 
             p="7"
             color="#006064"
-
+            class="white--text"
             >
-                <v-card-title class="white" class="name">Doug Osborn</v-card-title>
+                <v-card-title class="text-h6">Doug Osborn</v-card-title>
                 <div class="profile-section">
-                <v-card-subtitle class="white" class="about-developer">Lorem ipsum dolor sit amet, 
+                <v-card-subtitle class="about-developer">Lorem ipsum dolor sit amet, 
                     consectetur adipiscing elit, sed do eiusmod 
                     tempor incididunt ut labore et dolore magna aliqua.
                      Ut enim ad minim veniam, quis nostrud exercitation 
@@ -115,7 +144,11 @@
 
 
     </v-footer>
-  
+  </v-container>
+  </v-main>
+  </v-app>
+</div>
+</div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>

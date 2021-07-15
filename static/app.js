@@ -15,10 +15,23 @@ var app = new Vue({
                 "image":"../images/wave.jpg",
                 "descriptioin":"Ocean Waves in California USA"
             }
+        ],
+        categories:[
+            "Water",
+            "Mountains",
+            "Space",
+            "Trees",
+            "Plains",
+            "Desert",
+            "Sunsets",
+            "Flowers"
         ]
 
     },
     vuetify: new Vuetify(), 
+    methods:{
+
+    },
     computed: {
         filteredProducts: function(){
             var product_array = this.products;
