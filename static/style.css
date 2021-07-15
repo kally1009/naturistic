@@ -125,6 +125,9 @@ nav ul img {
 .white {
     color: white;
 }
+.primary-color {
+    background-color: #006064;
+}
 
 .link {
     text-decoration: none;
@@ -140,6 +143,10 @@ a {
 
 .collection {
     font-family: 'Roboto', sans-serif;
-    font-weight:bold;
     color: black;
+    text-transform: none;
+}
+
+#about-c {
+    grid-column:2;
 }
