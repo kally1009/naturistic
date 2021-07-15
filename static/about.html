@@ -23,8 +23,23 @@
           </div>
           <ul>
             <a><li>Home</li></a>
-            <a><li>Collection</li></a>
-            <a herf="about.html"><li>About</li></a>
+            <li><v-menu
+              open-on-hover
+              >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  small
+                  elevation="0"
+                  v-bind="attrs"
+                  v-on="on"
+                  color="#FFFFFF"
+                ><h3 class="collection">Collection</h3>
+                </v-btn>
+              </template>
+
+
+            </v-menu></li>
+            <a href="about.html"><li>About</li></a>
             <img src="../images/cart-alt.svg" alt="" height="25px">
           </ul>
         </nav>

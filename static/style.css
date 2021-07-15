@@ -137,3 +137,9 @@ a {
 .mr-icon {
     margin-right: 10px;
 }
+
+.collection {
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    color: black;
+}
