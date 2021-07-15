@@ -150,3 +150,6 @@ a {
 #about-c {
     grid-column:2;
 }
+#nav-color {
+    color: black;
+}
