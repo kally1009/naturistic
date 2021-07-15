@@ -6,13 +6,15 @@
 
 #app {
     display: grid;
-    grid-template-columns: 1fr 800px 1fr;
+    grid-template-columns: 1fr 1000px 1fr;
 }
+
+/* Navigation */
 
 nav {
     display: grid;
     grid-column: 1/4;
-    grid-template-columns: 1fr 200px 600px 1fr;
+    grid-template-columns: 1fr 200px 800px 1fr;
     height: 60px;
 }
 
@@ -92,6 +94,13 @@ nav ul img {
     padding: 0px 10px;
 }
 
+/* Image slider */
+
+.slider {
+    grid-column-start: 2;
+    display: flex;
+    justify-content: center;
+}
 
 /* About */
 
