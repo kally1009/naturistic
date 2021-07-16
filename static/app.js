@@ -2,10 +2,16 @@ var url = "http://localhost:4242"
 var app = new Vue({
     el: "#app",
     data: {
-        search_string:"",
+        searchString:"",
         selected_category:"Highlights",
         products: [
-            
+            {
+                "title":"Mountains",
+                "url":"",
+                "image":"../images/green_mountain_lake.jpg",
+                tags: "Mountains"
+                
+            }
         ],
         categories:[
             "Highlights",
@@ -47,6 +53,18 @@ var app = new Vue({
 
             })
             return product_array
-        }
+        },
+        filteredCategory: function(){
+            if(this.selected_category=="Highlights"){
+                return this.products 
+            }
+            else{
+                var sorted_products = this.products.filter(function(product){
+                    return product.tags == app.selected_category;
+                });
+                return sorted_products 
+            }
+            
+    }
    }
 });

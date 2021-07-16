@@ -17,80 +17,78 @@
 
   <body>
     <div id="app">
+      <div id="about-c">
+        <v-app>
+          <v-main >
+            <v-container>
         <nav>
           <div id="logo">
             <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
           </div>
           <ul>
-            <a><li>Home</li></a>
-            <a><li>Collection</li></a>
-            <a href="about.html"><li>About</li></a>
+            <li><v-menu
+              open-on-hover
+              offset-y
+              >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  small
+                  elevation="0"
+                  v-bind="attrs"
+                  v-on="on"
+                  color="#FFFFFF"
+                  text
+                ><li class="collection">Collection</li>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="(category, index) in categories"
+                  :key="index"
+                  link
+                >
+                  <v-list-item-title v-on:click="selected_category=category">{{ category }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+
+            </v-menu>
+            <a  id="nav-color" href="about.html"><li>About</li></a>
             <img src="../images/cart-alt.svg" alt="" height="25px">
           </ul>
         </nav>
         <div id="hero-section">
-          <p class="body-text"><strong>The internet’s source of high-resolution images.<br>
-            Powered by creators everywhere</strong></p>
+          <p class="body-text"><strong>{{selected_category}}</strong></p>
           <div class="search-bar">
             <div class="search-icon">
               <img src="../images/search-1.svg" alt="" height="15px">
             </div>
-            <input type="text" placeholder="Search high-resolution photos">
+            <input type="text" placeholder="Search high-resolution photos" v-model="searchString">
           </div>
         </div>
-        
-        <div class="slider">
-          <template>
-            <v-sheet
-              class="mx-auto"
-              elevation="8"
-              max-width="800"
-            >
-              <v-slide-group
-                v-model="model"
-                class="pa-4"
-                active-class="success"
-                show-arrows
-              >
-                <v-slide-item
-                  v-for="image in products"
-                  
-                  :key="image.image"
-                  v-slot="{ active, toggle }"
-                >
-                  <v-card
-      
-                    :src="image.image"
-                    class="ma-4"
-                    height="200"
-                    width="200"
-                    @click="toggle"
-                  >
-                    <v-row
-                      class="fill-height"
-                      align="center"
-                      justify="center"
-                    >
-                      <v-scale-transition>
-                        <v-icon
-                          v-if="active"
-                          color="white"
-                          size="48"
-                          v-text="'mdi-close-circle-outline'"
-                        ></v-icon>
-                      </v-scale-transition>
-                    </v-row>
-                  </v-card>
-                </v-slide-item>
-              </v-slide-group>
-            </v-sheet>
-          </template>
-        </div>
+        <div v-for="product in filteredCategory">
+          <div v-on:click="getImages(product._id)">
+              
+              <div v-for="tag in tags">
+                <ul>
+                  <li>{{tags}}</li>
 
-        
+                </ul>
 
+              </div>
+          </div>
+
+
+        <div v-for = "product in filteredProducts" class="search-results">
+          <img v-bind:src="product.image">
+
+
+
+      </div>
+      </v-container>
+      </v-main>
+      </v-app>
     </div>
-  
+  </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
