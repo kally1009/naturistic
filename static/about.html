@@ -45,8 +45,9 @@
                 <v-list-item
                   v-for="(category, index) in categories"
                   :key="index"
+                  href="index.html"
                 >
-                  <v-list-item-title>{{ category }}</v-list-item-title>
+                  <v-list-item-title v-on:click="selected_category=category">{{ category }}</v-list-item-title>
                 </v-list-item>
               </v-list>
 

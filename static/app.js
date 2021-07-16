@@ -1,22 +1,14 @@
+var url = "http://localhost:4242"
 var app = new Vue({
     el: "#app",
     data: {
         search_string:"",
+        selected_category:"Highlights",
         products: [
-            {
-                "title":"Single Desert Mountain",
-                "url":"",
-                "image":"../images/desert_mountain.jpg",
-                "description":"Desert Mountain"
-            },
-            {
-                "title":"California Waves",
-                "url":"",
-                "image":"../images/wave.jpg",
-                "descriptioin":"Ocean Waves in California USA"
-            }
+            
         ],
         categories:[
+            "Highlights",
             "Water",
             "Mountains",
             "Space",
@@ -29,8 +21,18 @@ var app = new Vue({
 
     },
     vuetify: new Vuetify(), 
+   // created: function(){
+       // this.getProducts();
+    //},
     methods:{
-
+        getProducts: function(){
+            fetch(`${url}/products/${selected_category}`).then(function(response){
+                response.json().then(function(data){
+                    console.log(data);
+                    app.products=data;
+                })
+            })
+        }
     },
     computed: {
         filteredProducts: function(){

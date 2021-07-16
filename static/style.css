@@ -162,3 +162,8 @@ a {
 #nav-color {
     color: black;
 }
+
+#collection-items {
+    color: black;
+    background-color: white;
+}
