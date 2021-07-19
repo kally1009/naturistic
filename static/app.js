@@ -4,17 +4,12 @@ var app = new Vue({
     data: {
         searchString:"",
         selected_category:"Highlights",
-        products: [
-            {
-                "title":"Mountains",
-                "url":"",
-                "image":"../images/green_mountain_lake.jpg",
-                tag: "Mountains"
-                
-            }
-        ],
         slides: 7,
         search_string:"",
+        page:"home",
+        cart:[
+
+        ],
         products: [
             {
                 _id: "fgfhghs",
