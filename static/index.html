@@ -12,11 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+
     <script src="https://js.stripe.com/v3/"></script>
   </head>
 
   <body>
-    <div id="app">
+    <v-app id="app">
         <nav>
           <div id="logo">
             <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
@@ -38,58 +39,53 @@
             <input type="text" placeholder="Search high-resolution photos">
           </div>
         </div>
-        
-        <div class="slider">
-          <template>
-            <v-sheet
-              class="mx-auto"
-              elevation="8"
-              max-width="800"
+
+      <v-main>
+        <template>
+          <v-sheet
+            class="mx-auto"
+            elevation="8"
+            max-width="900"
+          >
+            <v-slide-group
+              class="pa-4"
+              active-class="success"
+              show-arrows
             >
-              <v-slide-group
-                v-model="model"
-                class="pa-4"
-                active-class="success"
-                show-arrows
+              <v-slide-item
+                v-for="(product, i) in products"
+                :key="product._id"
+                v-slot="{ active, toggle }"
               >
-                <v-slide-item
-                  v-for="image in products"
-                  
-                  :key="image.image"
-                  v-slot="{ active, toggle }"
+                <v-card
+                  class="ma-4"
+                  max-height="300"
+                  max-width="300"
+                  @click="toggle"
                 >
-                  <v-card
-      
-                    :src="image.image"
-                    class="ma-4"
-                    height="200"
-                    width="200"
-                    @click="toggle"
+                <v-img :src="product.image">
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
                   >
-                    <v-row
-                      class="fill-height"
-                      align="center"
-                      justify="center"
-                    >
-                      <v-scale-transition>
-                        <v-icon
-                          v-if="active"
-                          color="white"
-                          size="48"
-                          v-text="'mdi-close-circle-outline'"
-                        ></v-icon>
-                      </v-scale-transition>
-                    </v-row>
-                  </v-card>
-                </v-slide-item>
-              </v-slide-group>
-            </v-sheet>
-          </template>
-        </div>
+                    <v-scale-transition>
+                      <v-icon
+                        v-if="active"
+                        color="white"
+                        size="48"
+                        v-text="'mdi-close-circle-outline'"
+                      ></v-icon>
+                    </v-scale-transition>
+                  </v-row>
+                </v-card>
 
-        
-
-    </div>
+              </v-slide-item>
+            </v-slide-group>
+          </v-sheet>
+        </template>
+      </v-main>
+    </v-app>
   
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
