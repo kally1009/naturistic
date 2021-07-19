@@ -199,17 +199,28 @@
           elvation="14"
           class="mx-auto"
           >
-          <v-card-title p="3" class="text-h5"><strong>Cart</strong></v-card-title>
+          <v-card-title p="3" class="text-h5" ><strong>Cart</strong></v-card-title>
           <v-spacer></v-spacer>
           <v-container>
           <v-row dense>
           <v-col cols="12">
+          
+          
           <v-card
-          p="7"
+          p="8"
           color="cyan darken-4"
           class="white--text"
+          v-for="item in cart"
+          :key="item.image"
           >
-
+          <div class="cart-display">
+            <img v-bind:src="item.image">
+            <div>
+              <v-card-title v-bind="item.title">{{item.title}}</v-card-title>
+              <p v-bind="item.price" class="center"> Price: ${{item.price}}.00</p>
+            </div>
+           
+          </div>
 
 
           </v-card>

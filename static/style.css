@@ -185,4 +185,13 @@ a {
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  
+
+  .cart-display {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  }
+
+  .center {
+      text-align:center;
+  }
