@@ -9,7 +9,7 @@ var app = new Vue({
                 "title":"Mountains",
                 "url":"",
                 "image":"../images/green_mountain_lake.jpg",
-                tags: "Mountains"
+                tag: "Mountains"
                 
             }
         ],

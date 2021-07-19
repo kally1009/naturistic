@@ -26,32 +26,20 @@
             <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
           </div>
           <ul>
-            <li><v-menu
-              open-on-hover
-              offset-y
-              >
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  small
-                  elevation="0"
-                  v-bind="attrs"
-                  v-on="on"
-                  color="#FFFFFF"
-                  text
-                ><li class="collection">Collection</li>
-                </v-btn>
-              </template>
-              <v-list>
-                <v-list-item
-                  v-for="(category, index) in categories"
-                  :key="index"
-                  link
-                >
-                  <v-list-item-title v-on:click="selected_category=category">{{ category }}</v-list-item-title>
-                </v-list-item>
-              </v-list>
-
-            </v-menu>
+              <li class="dropdown">
+                <button class="dropbtn">Collection</button>
+                <div class="dropdown-content">
+                  <v-list>
+                  <v-list-item
+                     v-for="(category,index) in categories"
+                    :key="index"
+                    link
+                    >
+                <v-list-item-title v-on:click="selected_category=category">{{ category }}</v-list-item-title>
+      </v-list-item>
+                </v-list>
+                </div>
+              </li>
             <a  id="nav-color" href="about.html"><li>About</li></a>
             <img src="../images/cart-alt.svg" alt="" height="25px">
           </ul>
@@ -67,22 +55,9 @@
         </div>
         <div v-for="product in filteredCategory">
           <div v-on:click="getImages(product._id)">
-              
-              <div v-for="tag in tags">
-                <ul>
-                  <li>{{tags}}</li>
-
-                </ul>
-
-              </div>
           </div>
-
-
         <div v-for = "product in filteredProducts" class="search-results">
           <img v-bind:src="product.image">
-
-
-
       </div>
       </v-container>
       </v-main>
