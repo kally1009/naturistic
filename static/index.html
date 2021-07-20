@@ -22,7 +22,6 @@
         <v-app>
           <v-main >
             <v-container>
-    <v-app id="app">
         <nav>
           <div id="logo">
             <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
@@ -132,6 +131,9 @@
 
           
         </template>
+        <v-btn @click="$vuetify.theme.dark =!$vuetify.them.dark" icon>
+          <v-icon>mdi-lightbulb-on-outline</v-icon>
+        </v-btn>
         </div>
 
         <div v-if="page=='about'">
@@ -222,59 +224,6 @@
   </v-card>
   </div>
       <div v-if="page=='checkout'">
-          <v-card
-          max-width= "1000"
-          elvation="14"
-          class="mx-auto"
-          >
-          <v-card-title p="3" class="text-h5 justify-center"><strong>Your Shopping Cart</strong></v-card-title>
-          <v-spacer></v-spacer>
-          <v-container>
-          <v-row justify="center">
-          <v-col cols="12">
-          
-          <v-card
-          color="cyan darken-2">
-          <v-card
-          color="cyan darken-4"
-          tile
-          class="white--text"
-          m="10"
-          max-width="700"
-          class="justify-ceter"
-          >
-          <br>
-          <br>
-          <div class="cart-display" v-for="item in cart" >
-            <v-img v-bind:src="item.image" max-width="250" p="2"></v-img>
-            <br>
-            <div>
-              <v-card-title v-bind="item.title">{{item.title}}</v-card-title>
-              <p v-bind="item.price" class="center"> Price: ${{item.price}}.00</p>
-            </div>
-           
-          </div>
-          <br>
-          <br>
-
-          </v-card>
-          <v-spacer></v-spacer>
-          <br>
-          <br>
-          </v-col>
-          </v-row>
-          </v-container>
-
-          <div class="total-section">
-
-          </div>
-          
-        </v-card>
-
-
-          </v-card>
-
-
 
 
       </div>
