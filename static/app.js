@@ -9,7 +9,16 @@ var app = new Vue({
         search_string:"",
         page:"home",
         cart:[
-
+            {
+                "title":"California Waves",
+                "image":"../images/wave.jpg",
+                "price": 1.00
+            },
+            {
+                "title":"Desert Mountain",
+                "image":"../images/wave.jpg",
+                "price": 1.00
+            }
         ],
         products: [
             {
@@ -44,8 +53,9 @@ var app = new Vue({
                 _id: "fdsafdsaf",
                 title:"Single Desert Mountain",
                 url:"",
-                image:"../images/snow_mountain.jpg",
-                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                image:"../images/snow_mountain1.jpg",
+                description:"Desert Mountain"
             },
             {
                 _id: "sdafsdfasd",

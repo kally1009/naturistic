@@ -227,25 +227,49 @@
           elvation="14"
           class="mx-auto"
           >
-          <v-card-title p="3" class="text-h5"><strong>Cart</strong></v-card-title>
+          <v-card-title p="3" class="text-h5 justify-center"><strong>Your Shopping Cart</strong></v-card-title>
           <v-spacer></v-spacer>
           <v-container>
-          <v-row dense>
+          <v-row justify="center">
           <v-col cols="12">
+          
           <v-card
-          p="7"
+          color="cyan darken-2">
+          <v-card
           color="cyan darken-4"
+          tile
           class="white--text"
+          m="10"
+          max-width="700"
+          class="justify-ceter"
           >
-
-
+          <br>
+          <br>
+          <div class="cart-display" v-for="item in cart" >
+            <v-img v-bind:src="item.image" max-width="250" p="2"></v-img>
+            <br>
+            <div>
+              <v-card-title v-bind="item.title">{{item.title}}</v-card-title>
+              <p v-bind="item.price" class="center"> Price: ${{item.price}}.00</p>
+            </div>
+           
+          </div>
+          <br>
+          <br>
 
           </v-card>
+          <v-spacer></v-spacer>
+          <br>
+          <br>
           </v-col>
           </v-row>
           </v-container>
-          
 
+          <div class="total-section">
+
+          </div>
+          
+        </v-card>
 
 
           </v-card>
