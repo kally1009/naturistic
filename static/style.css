@@ -102,6 +102,12 @@ nav ul img {
     justify-content: center;
 }
 
+/* Pop Out */
+
+#popup {
+    padding-bottom: 80px;
+}
+
 /* About */
 
 #developers {

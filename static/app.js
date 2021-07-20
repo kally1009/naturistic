@@ -2,6 +2,7 @@ var url = "http://localhost:4242"
 var app = new Vue({
     el: "#app",
     data: {
+        dialog: false,
         searchString:"",
         selected_category:"Highlights",
         slides: 7,
@@ -16,49 +17,42 @@ var app = new Vue({
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/wave.jpg",
-                description:"Desert Mountain"
-            },
-            {
-                _id: "ghgfhsg",
-                title:"California Waves",
-                url:"",
-                image:"../images/lake.jpg",
-                descriptioin:"Ocean Waves in California USA"
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 _id: "fdfadsfds",
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/waterfall.jpg",
-                description:"Desert Mountain"
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 _id: "dfdsfadsaf",
                 title:"Single Desert Mountain",
                 url:"",
-                image:"../images/desert_mountain.jpg",
-                description:"Desert Mountain"
+                image:"../images/sun_snow.jpg",
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 _id: "sfadsfa",
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/sun_mountain.jpg",
-                description:"Desert Mountain"
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 _id: "fdsafdsaf",
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/snow_mountain.jpg",
-                description:"Desert Mountain"
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             {
                 _id: "sdafsdfasd",
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/splashing.jpg",
-                description:"Desert Mountain"
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
         ],
         categories:[

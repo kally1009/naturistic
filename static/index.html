@@ -83,26 +83,54 @@
                   max-width="300"
                   @click="toggle"
                 >
-                <v-img :src="product.image">
+                <v-img 
+                  :src="product.image"
+                >
                   <v-row
                     class="fill-height"
                     align="center"
                     justify="center"
                   >
-                    <v-scale-transition>
-                      <v-icon
-                        v-if="active"
-                        color="white"
-                        size="48"
-                        v-text="'mdi-close-circle-outline'"
-                      ></v-icon>
-                    </v-scale-transition>
+
+                  <v-dialog v-if="active" v-model="dialog" persistent max-width="600px">
+                    <template v-slot:activator="{ on }">
+                      <v-btn color="primary" dark v-on="on">Open Image</v-btn>
+                    </template>
+                    <v-card>
+                      <v-card flat tile class="d-flex align-end flex-column mb-6">
+                        <v-btn tile color="white" @click="dialog = false" class="elevation-0"><v-icon>mdi-close</v-icon></v-btn>
+                      </v-card>
+                      <v-card-title>
+                        <span class="headline">{{ product.title }}</span>
+                        <v-card-text>{{ product.description }}</v-card-text>
+                      </v-card-title>
+                      
+                      <v-card id="popup" flat tile class="d-flex justify-center mb-6">
+                        <v-img 
+                        :src="product.image"
+                        max-height="300"
+                        max-width="auto"
+                        contain
+                        >
+                      </v-card>
+                      <v-card flat tile class="d-flex align-end flex-column mb-6">
+                        <v-btn tile color="white" class="elevation-0">Add to cart</v-btn>
+                      </v-card>
+                      
+              
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+
+                    
                   </v-row>
                 </v-card>
 
               </v-slide-item>
             </v-slide-group>
           </v-sheet>
+
+          
         </template>
         </div>
 
