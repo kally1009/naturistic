@@ -8,6 +8,7 @@ var app = new Vue({
         slides: 7,
         search_string:"",
         page:"home",
+        category_products:[],
         cart:[
             {
                 "title":"California Waves",
@@ -26,28 +27,34 @@ var app = new Vue({
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/wave.jpg",
-                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                tags:"Water",
+                shown: true
             },
             {
                 _id: "fdfadsfds",
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/waterfall.jpg",
-                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                tags: "Water",
+                shown: true
             },
             {
                 _id: "dfdsfadsaf",
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/sun_snow.jpg",
-                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                shown: true
             },
             {
                 _id: "sfadsfa",
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/sun_mountain.jpg",
-                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                shown: false
             },
             {
                 _id: "fdsafdsaf",
@@ -55,14 +62,16 @@ var app = new Vue({
                 url:"",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 image:"../images/snow_mountain1.jpg",
-                description:"Desert Mountain"
+                description:"Desert Mountain",
+                shown: false
             },
             {
                 _id: "sdafsdfasd",
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/splashing.jpg",
-                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                shown: false
             },
         ],
         categories:[
@@ -93,13 +102,19 @@ var app = new Vue({
         }
     },
     computed: {
-        filteredProducts: function(){
-            var product_array = this.products;
-            var searchString=this.searchString
+        searchProducts: function(){
+            var product_array = this.category_products;
+            var searchString=this.searchString;
             searchString = searchString.trim().toLowerCase();
 
             product_array= product_array.filter(function(item){
                 if(item.title.toLowerCase().indexOf(searchString)!==-1){
+                    return item
+                }
+                if(item.description.toLowerCase().indexOf(searchString)!==-1){
+                    return item
+                }
+                if(item.tags.toLowerCase().indexOf(searchString)!==-1){
                     return item
                 }
 
@@ -108,13 +123,14 @@ var app = new Vue({
         },
         filteredCategory: function(){
             if(this.selected_category=="Highlights"){
-                return this.products 
+                this.category_products=this.products
+                return this.category_products
             }
             else{
-                var sorted_products = this.products.filter(function(product){
-                    return product.tags == app.selected_category;
+                this.category_products = this.products.filter(function(product){
+                    return product.tags == this.selected_category;
                 });
-                return sorted_products 
+                return this.category_products 
             }
             
     }

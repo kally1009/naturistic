@@ -36,7 +36,7 @@
                     :key="index"
                     link
                     >
-                <v-list-item-title v-on:click="page='home', selected_category=category">{{ category }}</v-list-item-title>
+                <v-list-item-title v-on:click=" selected_category=category, page='home'">{{ category }}</v-list-item-title>
       </v-list-item>
                 </v-list>
                 </div>
@@ -72,7 +72,7 @@
               show-arrows
             >
               <v-slide-item
-                v-for="(product, i) in products"
+                v-for="(product, i) in category_products"
                 :key="product._id"
                 v-slot="{ active, toggle }"
               >
@@ -82,7 +82,7 @@
                   max-width="300"
                   @click="toggle"
                 >
-                <v-img 
+                <v-img v-if="product.shown"
                   :src="product.image"
                 >
                   <v-row
