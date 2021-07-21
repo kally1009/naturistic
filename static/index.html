@@ -22,24 +22,20 @@
         <v-app>
           <v-main >
             <v-container>
-        <nav>
-          <div id="logo">
-            <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
-          </div>
-          <ul>
-              <li class="dropdown">
-                <button class="dropbtn">Collection</button>
-                <div class="dropdown-content">
-                  <v-list>
-                  <v-list-item
-                     v-for="(category,index) in categories"
-                    :key="index"
-                    link
-                    >
-                <v-list-item-title v-on:click="page='home', selected_category=category">{{ category }}</v-list-item-title>
-      </v-list-item>
-                </v-list>
+              <nav>
+                <div id="logo">
+                  <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
                 </div>
+                <ul>
+                  <li class="dropdown">
+                  <button class="dropbtn">Collection</button>
+                  <div class="dropdown-content">
+                    <v-list>
+                      <v-list-item v-for="(category,index) in categories" :key="index" link>
+                        <v-list-item-title v-on:click="page='home', selected_category=category">{{ category }}</v-list-item-title>
+                      </v-list-item>
+                    </v-list>
+                  </div>
               </li>
             <a  id="nav-color" href="#"><li v-on:click="page='about'">About</li></a>
             <a href="#"><img src="../images/cart-alt.svg" alt="" height="25px" v-on:click="page='checkout'"></a>
@@ -223,16 +219,16 @@
   </v-container>
   </v-card>
   </div>
-      <div v-if="page=='checkout'">
+      <div v-if="page=='checkout'" id="checkout-grid">
 
 
       </div>
 
-  </v-container>
-</v-main>
-</v-app>
-</div>
-</div>
+        </v-container>
+          </v-main>
+        </v-app>
+      </div>
+    </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>

@@ -202,3 +202,11 @@ a {
   .center {
       text-align:center;
   }
+
+  /* Checkout */
+
+  #checkout-grid {
+      background-color: aqua;
+      height: 300px;
+      grid-column-start: 2;
+  }
