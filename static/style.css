@@ -214,8 +214,21 @@ a {
 
   /* Checkout */
 
-  #checkout-grid {
-      background-color: aqua;
-      height: 300px;
-      grid-column-start: 2;
-  }
+#checkout {
+    display: grid;
+    grid-template-columns: 1fr 1000px 1fr;
+}
+
+h2 {
+    grid-column-start: 2;
+}
+
+#checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px 400px 200px 200px 1fr;
+    grid-column-start: 2;
+}
+
+#checkout-grid img {
+    grid-row-start: 2;
+}
