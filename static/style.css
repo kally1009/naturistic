@@ -215,15 +215,3 @@ a {
 
   /* Checkout */
 
-  #checkout-grid {
-      background-color: aqua;
-      height: 300px;
-      grid-column-start: 2;
-  }
-
-  .flex-center {
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    grid-column: 2;
-  }

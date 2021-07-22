@@ -9,14 +9,7 @@ var app = new Vue({
         page:"home",
         category_products:[],
         cart:[
-            {
-                title:"Ocean Water",
-                bigImage:"",
-                image:"../images/wave.jpg",
-                description:"",
-                tags:["Water"],
-                price: 1.00
-            }
+            
         ],
         products: [
             {
@@ -29,44 +22,49 @@ var app = new Vue({
                 
             },
             {
-                title:"Mountain",
+                title:"Water Fall",
                 bigImage:"",
                 image:"../images/waterfall.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 tags: ["Water"],
+                price: 2.00
                 
             },
             {
-                title:"Single Desert Mountain",
-                url:"",
+                title:"Snowy Trees",
+                bigImage:"",
                 image:"../images/sun_snow.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 tags: ["Trees"],
+                price: 1.00
                 
             },
             {
-                title:"Single Desert Mountain",
+                title:"Sunset with Mountains",
                 bigImage:"",
                 image:"../images/sun_mountain.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                tags:["Mountains","Water"],
+                tags:["Mountains","Sunsets", "Desert"],
+                price: 2.00
                 
             },
             {
-                title:"Single Desert Mountain",
+                title:"Snow Mountains",
                 bigImage:"",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 image:"../images/snow_mountain1.jpg",
                 description:"Desert Mountain",
                 tags:["Mountains"],
+                price: 1.00
                 
             },
             {
-                title:"Single Desert Mountain",
+                title:"Underwater",
                 bigImage:"",
                 image:"../images/splashing.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 tags:["Water"],
+                price: 1.00
                 
             },
         ],
@@ -114,6 +112,14 @@ var app = new Vue({
             })
             app.category_products=product_array;
             console.log(app.category_products);
+        },
+        addToCart: function(product){
+            app.cart.push(product);
+            console.log(app.cart);
+        },
+        deleteFromCart: function(index){
+            app.cart.splice(index,1);
+            console.log(app.cart);
         }
     },
 

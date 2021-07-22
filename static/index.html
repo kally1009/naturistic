@@ -82,7 +82,7 @@
                                 <v-img :src="product.image" max-height="300" max-width="auto" contain>
                               </v-card>
                               <v-card flat tile class="d-flex align-end flex-column mb-6">
-                                <v-btn tile color="white" class="elevation-0">Add to cart</v-btn>
+                                <v-btn tile color="white" class="elevation-0" v-on:click="addToCart(product), dialog=false">Add to cart</v-btn>
                               </v-card>
                             </v-card>
                           </v-dialog>
@@ -115,7 +115,7 @@
                               <br>
                               <br>
                               <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/daniel-urias-aa89451b2" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
-                              <v-btn fab color="#0097A7" small><a href="#" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
+                              <v-btn fab color="#0097A7" small><a href="https://github.com/danielurias" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
                           </v-card-subtitle>
                           <v-card-subtitle><v-img contain src="../images/daniel.jpg" width="300"></v-img></v-card-subtitle>
                         </div>
@@ -153,7 +153,7 @@
                               <br>
                               <br>
                               <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/opensimian" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
-                              <v-btn fab color="#0097A7" small><a href="#" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
+                              <v-btn fab color="#0097A7" small><a href="https://github.com/dsudosborn" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
                             </v-card-subtitle>
                             <v-card-subtitle><v-img contain src="../images/doug.png" width="300"></v-img></v-card-subtitle>
                           </div>
