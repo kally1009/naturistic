@@ -165,8 +165,11 @@
               </div>
               <div v-if="page=='checkout'" id="checkout">
                 <h2>Checkout</h2>
-                <div id="checkout-grid">
-                  <v-img src="../images/desert_mountains.jpg">
+                <div id="checkout-grid" v-for="product in cart">
+                  <v-img id="cart-img" :src="product.image" width="200px">
+                  <div id="p">
+                    <p>{{ product.title }}</p>
+                  </div>
 
 
 
