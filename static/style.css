@@ -7,6 +7,7 @@
 #app {
     display: grid;
     grid-template-columns: 1fr 1000px 1fr;
+    margin:auto;
 }
 
 /* Navigation */
@@ -209,4 +210,11 @@ a {
       background-color: aqua;
       height: 300px;
       grid-column-start: 2;
+  }
+
+  .flex-center {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    grid-column: 2;
   }
