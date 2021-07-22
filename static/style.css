@@ -223,23 +223,24 @@ h2 {
     grid-column-start: 2;
 }
 
-#p {
-    grid-column-start: 2;
-}
-
 #checkout-grid {
     display: grid;
-    grid-template-columns: 1fr 200px 200px 200px 200px 1fr;
+    grid-template-columns: 200px 200px 200px 200px;
     grid-column-start: 2;
 }
 
 #cart-img {
-    grid-row-start: 1;
+    grid-column-start: 1;
 }
 
-.flex-center {
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    grid-column: 2;
+#title {
+    grid-column-start: 2;
+}
+
+#price {
+    grid-column-start: 3;
+}
+
+#remove-btn {
+    grid-column-start: 4;
 }

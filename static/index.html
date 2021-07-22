@@ -165,14 +165,19 @@
               </div>
               <div v-if="page=='checkout'" id="checkout">
                 <h2>Checkout</h2>
-                <div id="checkout-grid" v-for="product in cart">
-                  <v-img id="cart-img" :src="product.image" width="200px">
-                  <div id="p">
+                <div id="checkout-grid" v-for="(product, i) in cart" :key="i">
+                  <div id="cart-img">
+                    <v-img :src="product.image" width="150px">
+                  </div>
+                  <div id="title">
                     <p>{{ product.title }}</p>
                   </div>
-
-
-
+                  <div id="price">
+                    <p>Price: ${{ product.price }}</p>
+                  </div>
+                  <div id="remove-btn">
+                    <v-btn tile color="white" class="elevation-0" v-on:click="deleteFromCart(i)"><v-icon>mdi-close</v-icon></v-btn>
+                  </div>
                 </div>
               </div>
             </v-container>
