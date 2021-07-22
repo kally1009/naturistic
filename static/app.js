@@ -5,73 +5,69 @@ var app = new Vue({
         dialog: false,
         searchString:"",
         selected_category:"Highlights",
-        slides: 7,
         search_string:"",
         page:"home",
         category_products:[],
         cart:[
             {
-                "title":"California Waves",
-                "image":"../images/wave.jpg",
-                "price": 1.00
-            },
-            {
-                "title":"Desert Mountain",
-                "image":"../images/wave.jpg",
-                "price": 1.00
+                title:"Ocean Water",
+                bigImage:"",
+                image:"../images/wave.jpg",
+                description:"",
+                tags:["Water"],
+                price: 1.00
             }
         ],
         products: [
             {
-                _id: "fgfhghs",
-                title:"Single Desert Mountain",
-                url:"",
+                title:"Ocean Water",
+                bigImage:"",
                 image:"../images/wave.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                tags:"Water",
-                shown: true
+                tags:["Water"],
+                price:1.00
+                
             },
             {
-                _id: "fdfadsfds",
-                title:"Single Desert Mountain",
-                url:"",
+                title:"Mountain",
+                bigImage:"",
                 image:"../images/waterfall.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                tags: "Water",
-                shown: true
+                tags: ["Water"],
+                
             },
             {
-                _id: "dfdsfadsaf",
                 title:"Single Desert Mountain",
                 url:"",
                 image:"../images/sun_snow.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                shown: true
+                tags: ["Trees"],
+                
             },
             {
-                _id: "sfadsfa",
                 title:"Single Desert Mountain",
-                url:"",
+                bigImage:"",
                 image:"../images/sun_mountain.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                shown: false
+                tags:["Mountains","Water"],
+                
             },
             {
-                _id: "fdsafdsaf",
                 title:"Single Desert Mountain",
-                url:"",
+                bigImage:"",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 image:"../images/snow_mountain1.jpg",
                 description:"Desert Mountain",
-                shown: false
+                tags:["Mountains"],
+                
             },
             {
-                _id: "sdafsdfasd",
                 title:"Single Desert Mountain",
-                url:"",
+                bigImage:"",
                 image:"../images/splashing.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                shown: false
+                tags:["Water"],
+                
             },
         ],
         categories:[
@@ -88,51 +84,71 @@ var app = new Vue({
 
     },
     vuetify: new Vuetify(), 
-   // created: function(){
-       // this.getProducts();
-    //},
+    created: function(){
+       this.getProducts();
+    },
     methods:{
         getProducts: function(){
-            fetch(`${url}/products/${selected_category}`).then(function(response){
+            fetch(`${url}/prices`).then(function(response){
                 response.json().then(function(data){
                     console.log(data);
                     app.products=data;
                 })
             })
-        }
-    },
-    computed: {
+        },
         searchProducts: function(){
-            var product_array = this.category_products;
+            var product_array = []
             var searchString=this.searchString;
             searchString = searchString.trim().toLowerCase();
 
-            product_array= product_array.filter(function(item){
+            this.category_products.forEach(function(item){
+                
                 if(item.title.toLowerCase().indexOf(searchString)!==-1){
-                    return item
+                    console.log(item.title)
+                    product_array.push(item)
                 }
                 if(item.description.toLowerCase().indexOf(searchString)!==-1){
-                    return item
-                }
-                if(item.tags.toLowerCase().indexOf(searchString)!==-1){
-                    return item
+                    product_array.push(item)
                 }
 
             })
-            return product_array
-        },
+            app.category_products=product_array;
+            console.log(app.category_products);
+        }
+    },
+
+    computed: {
+        
         filteredCategory: function(){
             if(this.selected_category=="Highlights"){
                 this.category_products=this.products
-                return this.category_products
+                return this.category_products;
             }
             else{
-                this.category_products = this.products.filter(function(product){
-                    return product.tags == this.selected_category;
-                });
-                return this.category_products 
-            }
-            
+                    this.category_products=[]
+                    this.products.forEach(function(product,index){
+                    product.tags.filter(function(tag){
+                        if(tag == app.selected_category){
+                            app.category_products.push(product);
+                            console.log(product, tag);
+                        }
+                    })
+                })
+                return this.category_products;
+                
+               // this.category_products = this.products.filter(function(product){
+                //    product.tags.filter(function(tag,index){
+                 //       return tag[index]==this.selected_category;
+                 //  });
+                       
+                    
+                    //product.tags,this.selected_category)
+                    //return product.tags == app.selected_category;
+                 
+          //  })
+        
     }
-   }
-});
+    
+}
+    }
+    });

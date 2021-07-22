@@ -47,10 +47,11 @@
                     <div class="search-icon">
                       <img src="../images/search-1.svg" alt="" height="15px">
                     </div>
-                    <input type="text" placeholder="Search high-resolution photos" v-model="searchString">
+                    <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
                   </div>
                 </div>
                 <div v-for="product in filteredCategory">
+
                   <div v-on:click="getImages(product._id)">
                   </div>
                 </div>
@@ -58,10 +59,10 @@
                 <div id="carousel">
                 <template>
                   <v-sheet class="mx-auto" elevation="8" max-width="1000" id="carousel">
-                    <v-slide-group class="pa-4" active-class="success" show-arrows>
+                    <v-slide-group class="pa-4" active-class="success" show-arrows v-model="category_products">
                       <v-slide-item v-for="(product, i) in category_products" :key="product._id" v-slot="{ active, toggle }">
                         <v-card class="ma-4" height="200" width="200" @click="toggle" >
-                        <v-img v-if="product.shown" :src="product.image" height="200" width="200" >
+                        <v-img :src="product.image" height="200" width="200" >
                           <v-row class="fill-height" align="center" justify="center">
 
                           <v-dialog v-if="active" v-model="dialog" persistent max-width="600px">
