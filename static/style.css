@@ -4,10 +4,14 @@
     font-family: 'Roboto', sans-serif;
 }
 
-#app {
+body {
     display: grid;
     grid-template-columns: 1fr 1000px 1fr;
     margin:auto;
+}
+
+#app {
+    grid-column: 1/4;
 }
 
 /* Navigation */
@@ -96,6 +100,11 @@ nav ul img {
 }
 
 /* Image slider */
+
+#carousel {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
 .slider {
     grid-column-start: 2;

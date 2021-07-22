@@ -18,11 +18,9 @@
 
   <body>
     <div id="app">
-      <div id="about-c">
         <v-app>
           <v-main>
-            <v-container>
-              <nav>
+                <nav>
                 <div id="logo">
                   <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
                 </div>
@@ -56,13 +54,14 @@
                   <div v-on:click="getImages(product._id)">
                   </div>
                 </div>
-        
+                
+                <div id="carousel">
                 <template>
-                  <v-sheet class="mx-auto" elevation="8" max-width="1000">
+                  <v-sheet class="mx-auto" elevation="8" max-width="1000" id="carousel">
                     <v-slide-group class="pa-4" active-class="success" show-arrows>
                       <v-slide-item v-for="(product, i) in category_products" :key="product._id" v-slot="{ active, toggle }">
-                        <v-card class="ma-4" max-height="300" max-width="300" @click="toggle">
-                        <v-img v-if="product.shown" :src="product.image">
+                        <v-card class="ma-4" height="200" width="200" @click="toggle" >
+                        <v-img v-if="product.shown" :src="product.image" height="200" width="200" >
                           <v-row class="fill-height" align="center" justify="center">
 
                           <v-dialog v-if="active" v-model="dialog" persistent max-width="600px">
@@ -93,6 +92,7 @@
                     </v-slide-group>
                   </v-sheet>
                 </template>
+                </div>
               </div>
 
               <div v-if="page=='about'">
@@ -169,7 +169,6 @@
             </v-container>
           </v-main>
         </v-app>
-      </div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
