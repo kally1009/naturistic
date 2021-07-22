@@ -10,32 +10,31 @@ var app = new Vue({
         category_products:[],
         cart:[
             {
-                "title":"California Waves",
-                "image":"../images/wave.jpg",
-                "price": 1.00
-            },
-            {
-                "title":"Desert Mountain",
-                "image":"../images/wave.jpg",
-                "price": 1.00
+                title:"Ocean Water",
+                bigImage:"",
+                image:"../images/wave.jpg",
+                description:"",
+                tags:["Water"],
+                price: 1.00
             }
         ],
         products: [
             {
-                title:"Single Desert Mountain",
-                url:"",
+                title:"Ocean Water",
+                bigImage:"",
                 image:"../images/wave.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 tags:["Water"],
-                shown: true
+                price:1.00
+                
             },
             {
-                title:"Single Desert Mountain",
-                url:"",
+                title:"Mountain",
+                bigImage:"",
                 image:"../images/waterfall.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 tags: ["Water"],
-                shown: true
+                
             },
             {
                 title:"Single Desert Mountain",
@@ -43,32 +42,32 @@ var app = new Vue({
                 image:"../images/sun_snow.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 tags: ["Trees"],
-                shown: true
+                
             },
             {
                 title:"Single Desert Mountain",
-                url:"",
+                bigImage:"",
                 image:"../images/sun_mountain.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 tags:["Mountains","Water"],
-                shown: true
+                
             },
             {
                 title:"Single Desert Mountain",
-                url:"",
+                bigImage:"",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 image:"../images/snow_mountain1.jpg",
                 description:"Desert Mountain",
                 tags:["Mountains"],
-                shown: true
+                
             },
             {
                 title:"Single Desert Mountain",
-                url:"",
+                bigImage:"",
                 image:"../images/splashing.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 tags:["Water"],
-                shown: true
+                
             },
         ],
         categories:[
@@ -85,40 +84,41 @@ var app = new Vue({
 
     },
     vuetify: new Vuetify(), 
-   // created: function(){
-       // this.getProducts();
-    //},
+    created: function(){
+       this.getProducts();
+    },
     methods:{
         getProducts: function(){
-            fetch(`${url}/products/${selected_category}`).then(function(response){
+            fetch(`${url}/prices`).then(function(response){
                 response.json().then(function(data){
                     console.log(data);
                     app.products=data;
                 })
             })
-        }
-    },
-    computed: {
+        },
         searchProducts: function(){
-            var product_array = this.category_products;
+            var product_array = []
             var searchString=this.searchString;
             searchString = searchString.trim().toLowerCase();
 
-            product_array= product_array.filter(function(item){
-                console.log(item.title)
+            this.category_products.forEach(function(item){
+                
                 if(item.title.toLowerCase().indexOf(searchString)!==-1){
-                    return item
+                    console.log(item.title)
+                    product_array.push(item)
                 }
                 if(item.description.toLowerCase().indexOf(searchString)!==-1){
-                    return item
-                }
-                if(item.tags.toLowerCase().indexOf(searchString)!==-1){
-                    return item
+                    product_array.push(item)
                 }
 
             })
-            return product_array
-        },
+            app.category_products=product_array;
+            console.log(app.category_products);
+        }
+    },
+
+    computed: {
+        
         filteredCategory: function(){
             if(this.selected_category=="Highlights"){
                 this.category_products=this.products
