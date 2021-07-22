@@ -84,9 +84,9 @@ var app = new Vue({
 
     },
     vuetify: new Vuetify(), 
-    created: function(){
-       this.getProducts();
-    },
+    //created: function(){
+      // this.getProducts();
+    //},
     methods:{
         getProducts: function(){
             fetch(`${url}/prices`).then(function(response){
