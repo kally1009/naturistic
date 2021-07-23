@@ -3,6 +3,7 @@ var app = new Vue({
     el: "#app",
     data: {
         dialog: false,
+        active: false,
         searchString:"",
         selected_category:"Highlights",
         search_string:"",
@@ -120,15 +121,11 @@ var app = new Vue({
         deleteFromCart: function(index){
             app.cart.splice(index,1);
             console.log(app.cart);
-        }
-    },
-
-    computed: {
-        
+        },
         filteredCategory: function(){
             if(this.selected_category=="Highlights"){
                 this.category_products=this.products
-                return this.category_products;
+               // return this.category_products;
             }
             else{
                     this.category_products=[]
@@ -140,21 +137,10 @@ var app = new Vue({
                         }
                     })
                 })
-                return this.category_products;
-                
-               // this.category_products = this.products.filter(function(product){
-                //    product.tags.filter(function(tag,index){
-                 //       return tag[index]==this.selected_category;
-                 //  });
-                       
-                    
-                    //product.tags,this.selected_category)
-                    //return product.tags == app.selected_category;
-                 
-          //  })
+               // return this.category_products;
         
-    }
+            }
     
-}
+        }
     }
     });
