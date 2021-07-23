@@ -202,16 +202,5 @@ a {
     display: block;
   }
 
-  .cart-display {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: 20px;
-  }
-
-  .center {
-      text-align:center;
-  }
-
   /* Checkout */
 
