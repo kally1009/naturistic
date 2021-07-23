@@ -59,10 +59,10 @@
                 <div id="carousel">
                 <template>
                   <v-sheet class="mx-auto" elevation="8" max-width="1000" id="carousel">
-                    <v-slide-group class="pa-4" active-class="success" show-arrows v-model="category_products">
+                    <v-slide-group class="pa-4" cycle active-class="success" show-arrows v-model="category_products">
                       <v-slide-item v-for="(product, i) in category_products" :key="product._id" v-slot="{ active, toggle }">
                         <v-card class="ma-4" height="200" width="200" @click="toggle" >
-                        <v-img :src="product.image" height="200" width="200" >
+                        <v-img v-bind:src="product.image" height="200" width="200" >
                           <v-row class="fill-height" align="center" justify="center">
 
                           <v-dialog v-if="active" v-model="dialog" persistent max-width="600px">
@@ -82,7 +82,7 @@
                                 <v-img :src="product.image" max-height="300" max-width="auto" contain>
                               </v-card>
                               <v-card flat tile class="d-flex align-end flex-column mb-6">
-                                <v-btn tile color="white" class="elevation-0">Add to cart</v-btn>
+                                <v-btn tile color="white" class="elevation-0" v-on:click="addToCart(product), dialog=false">Add to cart</v-btn>
                               </v-card>
                             </v-card>
                           </v-dialog>
@@ -115,9 +115,9 @@
                               <br>
                               <br>
                               <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/daniel-urias-aa89451b2" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
-                              <v-btn fab color="#0097A7" small><a href="#" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
+                              <v-btn fab color="#0097A7" small><a href="https://github.com/danielurias" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
                           </v-card-subtitle>
-                          <v-card-subtitle><v-img contain src="../images/sun_mountain.jpg" width="300"></v-img></v-card-subtitle>
+                          <v-card-subtitle><v-img contain src="../images/daniel.jpg" width="300"></v-img></v-card-subtitle>
                         </div>
                         </v-card>
                       </v-col>
@@ -153,9 +153,9 @@
                               <br>
                               <br>
                               <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/opensimian" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
-                              <v-btn fab color="#0097A7" small><a href="#" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
+                              <v-btn fab color="#0097A7" small><a href="https://github.com/dsudosborn" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
                             </v-card-subtitle>
-                            <v-card-subtitle><v-img contain src="../images/lake.jpg" width="300"></v-img></v-card-subtitle>
+                            <v-card-subtitle><v-img contain src="../images/doug.png" width="300"></v-img></v-card-subtitle>
                           </div>
                         </v-card>
                       </v-col>
