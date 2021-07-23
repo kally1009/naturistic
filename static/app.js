@@ -9,9 +9,7 @@ var app = new Vue({
         search_string:"",
         page:"home",
         category_products:[],
-        cart:[
-            
-        ],
+        cart:[],
         products: [
             {
                 title:"Ocean Water",
@@ -78,7 +76,8 @@ var app = new Vue({
             "Desert",
             "Sunsets",
             "Flowers"
-        ]
+        ],
+        
 
     },
     vuetify: new Vuetify(), 
