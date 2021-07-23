@@ -31,7 +31,7 @@
                   <div class="dropdown-content">
                     <v-list>
                       <v-list-item v-for="(category,index) in categories" :key="index" link>
-                        <v-list-item-title v-on:click="page='home', selected_category=category">{{ category }}</v-list-item-title>
+                        <v-list-item-title v-on:click="page='home', selected_category=category, filteredCategory">{{ category }}</v-list-item-title>
                       </v-list-item>
                     </v-list>
                   </div>
@@ -50,7 +50,7 @@
                     <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
                   </div>
                 </div>
-                <div v-for="product in filteredCategory">
+                <div v-for="product in category_products">
 
                   <div v-on:click="getImages(product._id)">
                   </div>
@@ -167,7 +167,6 @@
 
 
               </div>
-            </v-container>
           </v-main>
         </v-app>
     </div>
