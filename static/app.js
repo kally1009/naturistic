@@ -75,7 +75,6 @@ var app = new Vue({
             "Mountains",
             "Space",
             "Trees",
-            "Plains",
             "Desert",
             "Sunsets",
             "Flowers"
