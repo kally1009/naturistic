@@ -165,11 +165,9 @@
               </div>
               <div v-if="page=='checkout'" id="checkout">
                 <h2>Checkout</h2>
-                <h3>dsfasd</h3>
-                <div id="checkout-grid" v-for="(product, i) in cart" :key="i">
-
-                  <div id="cart-img">
-                    <v-img :src="product.image" width="150px">
+                <div id="cg" v-for="(product, i) in cart" :key="i">
+                  <div class="cart-img">
+                    <v-img :src="product.image" height="150px" width="150px">
                   </div>
                   <div id="title">
                     <p>{{ product.title }}</p>
