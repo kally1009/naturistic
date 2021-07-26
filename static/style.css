@@ -118,6 +118,14 @@ nav ul img {
     padding-bottom: 80px;
 }
 
+#card-title {
+    padding-left: 50px;
+}
+
+#card-desc {
+    padding-left: 50px;
+}
+
 /* About */
 
 #developers {

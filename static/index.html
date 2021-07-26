@@ -69,8 +69,8 @@
                                 <v-btn tile color="white" @click="dialog = false" class="elevation-0"><v-icon>mdi-close</v-icon></v-btn>
                               </v-card>
                               <v-card-title>
-                                <span class="headline">{{ product.title }}</span>
-                                <v-card-text>{{ product.description }}</v-card-text>
+                                <span id="card-title" class="headline">{{ product.title }}</span>
+                                <v-card-text id="card-desc">{{ product.description }}</v-card-text>
                               </v-card-title>
                                 
                               <v-card id="popup" flat tile class="d-flex justify-center mb-6">
