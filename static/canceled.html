@@ -21,25 +21,21 @@
     <div id="app">
       <v-app>
         <v-main>
-          <v-container>
           <nav>
             <div id="logo">
               <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
             </div>
-            </nav>
-            <div class="flex-center">
-            <v-card
-            class="grid-center"
-            >
-          <v-card-title class="justify-center">Your payment was canceled</v-card-title>
-          <v-card-text>
-          <button><a href="index.html" class="black--text" ><v-icon>mdi-keyboard-backspace</v-icon>Back to Naturistic</a></button></v-card-text>
+          </nav>
+          <div class="canceled">
+            <v-card id="cancel-card" class="grid-center">
+              <v-card-title class="justify-center">Your payment was canceled</v-card-title>
+              <v-card-text>
+              <button><a href="index.html" class="black--text" ><v-icon>mdi-keyboard-backspace</v-icon>Back to Naturistic</a></button></v-card-text>
             </v-card>
           </div>
-          </v-container> 
-    </v-main>
-    </v-app>
-  </div>
+        </v-main>
+      </v-app>
+    </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
