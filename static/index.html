@@ -62,7 +62,7 @@
 
                           <v-dialog v-if="active" v-model="dialog" persistent max-width="600px">
                             <template v-slot:activator="{ on }"> 
-                               <v-btn color="primary" dark v-on="on">Open Image</v-btn>
+                               <v-btn color="#006064" dark v-on="on">Open Image</v-btn>
                             </template>
                             <v-card>
                               <v-card flat tile class="d-flex align-end flex-column mb-6">
@@ -160,6 +160,9 @@
               </div>
               <div v-if="page=='checkout'" id="checkout">
                 <h2>Checkout</h2>
+                <div id="empty-cart" v-if="cart.length==0">
+                  <p>{{ cart_empty }}</p>
+                </div>
                 
 
                 <div id="cg" v-for="(product, i) in cart" :key="i">
@@ -176,9 +179,6 @@
                     <v-btn tile color="white" class="elevation-0" v-on:click="deleteFromCart(i)"><v-icon>mdi-close</v-icon></v-btn>
                   </div>
                   <hr>
-                </div>
-                <div v-if="cart.length==0">
-                  {{ cart_empty }}
                 </div>
               </div>
           </v-main>

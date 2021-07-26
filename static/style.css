@@ -265,3 +265,21 @@ hr {
     grid-column: 2/6;
     margin-top: 20px;
 }
+
+#empty-cart {
+    display: flex;
+    justify-content: center;
+    grid-column-start: 2;
+}
+
+/* Canceled */
+
+.canceled {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+#cancel-card {
+    padding: 20px 200px;
+}
