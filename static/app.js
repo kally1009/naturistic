@@ -10,6 +10,7 @@ var app = new Vue({
         page:"home",
         category_products:[],
         cart:[],
+        cart_empty: "Cart is Empty",
         products: [
             {
                 title:"Ocean Water",

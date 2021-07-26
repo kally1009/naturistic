@@ -165,10 +165,8 @@
               </div>
               <div v-if="page=='checkout'" id="checkout">
                 <h2>Checkout</h2>
-                <!-- <div v-show="cart.length==0"> -->
-                  <!-- {{ cart_empty }} -->
+                
 
-                <!-- </div> -->
                 <div id="cg" v-for="(product, i) in cart" :key="i">
                   <div class="cart-img">
                     <v-img :src="product.image" height="100px" width="100px">
@@ -184,7 +182,10 @@
                   </div>
                   <hr>
                 </div>
-                
+                <div v-if="cart.length==0">
+                  {{ cart_empty }}
+                </div>
+              </div>
               </div>
           </v-main>
         </v-app>
