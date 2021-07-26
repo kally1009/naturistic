@@ -84,6 +84,7 @@ var app = new Vue({
     vuetify: new Vuetify(), 
     created: function(){
       this.filteredCategory();
+      console.log(this.page);
     },
     methods:{
         getProducts: function(){
