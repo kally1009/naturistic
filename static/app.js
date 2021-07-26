@@ -113,7 +113,15 @@ var app = new Vue({
                 body: JSON.stringify(line_items)
             }).then(function(response){
                 console.log(price)
+                if(response==404){
+                    response.json().then(function(data){
+                        alert(data.msg)
+                })
+                //put else if for what happens if it is a success?
+            }
+
             })
+
         },
 
         searchProducts: function(){
