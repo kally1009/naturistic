@@ -191,6 +191,9 @@
                   </div>
                   <hr>
                 </div>
+                <div id="checkout-btn" v-if="cart.length>0">
+                  <v-btn id="buy-btn" color="#006064" dark>Checkout</v-btn>
+                </div>
               </div>
           </v-main>
         </v-app>
