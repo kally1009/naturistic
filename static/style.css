@@ -257,7 +257,7 @@ h2 {
 
 #price {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     grid-column-start: 4;
 }
@@ -277,6 +277,12 @@ hr {
 #empty-cart {
     display: flex;
     justify-content: center;
+    grid-column-start: 2;
+}
+
+#checkout-btn {
+    display: flex;
+    justify-content: flex-end;
     grid-column-start: 2;
 }
 
