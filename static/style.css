@@ -281,9 +281,18 @@ hr {
 }
 
 #checkout-btn {
-    display: flex;
-    justify-content: flex-end;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 550px 150px 1fr;
     grid-column-start: 2;
+    
+}
+
+#buy-btn {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    grid-column-start: 3; 
 }
 
 /* Canceled */
