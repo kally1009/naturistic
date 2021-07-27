@@ -2,7 +2,7 @@ var url = "http://localhost:4242"
 var app = new Vue({
     el: "#app",
     data: {
-        dialog: false,
+        dialog:false,
         active: false,
         searchString:"",
         selected_category:"Highlights",
