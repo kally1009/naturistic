@@ -147,7 +147,7 @@
                             </template>
                             <v-card>
                               <v-card flat tile class="d-flex align-end flex-column mb-6">
-                                <v-btn tile color="white" @click="dialog = false" class="elevation-0"><v-icon>mdi-close</v-icon></v-btn>
+                                <v-btn tile color="white" @click="dialog=false" class="elevation-0"><v-icon>mdi-close</v-icon></v-btn>
                               </v-card>
                               <v-card-title>
                                 <span id="card-title" class="headline">{{ product.title }}</span>
@@ -265,7 +265,7 @@
                     <p>{{ product.title }}</p>
                   </div>
                   <div id="price">
-                    <p>Price: ${{ product.price }}</p>
+                    <p>Price: ${{product.amount}}</p>
                   </div>
                   <div id="remove-btn">
                     <v-btn tile color="white" class="elevation-0" v-on:click="deleteFromCart(i)"><v-icon>mdi-close</v-icon></v-btn>
@@ -273,7 +273,7 @@
                   <hr>
                 </div>
                 <div id="checkout-btn" v-if="cart.length>0">
-                  <v-btn id="buy-btn" color="#006064" dark>Checkout</v-btn>
+                  <v-btn id="buy-btn" color="#006064" dark v-on:click="postPrice" v-model="cart">Checkout</v-btn>
                 </div>
               </div>
           </v-main>

@@ -1,4 +1,4 @@
-var url = "http://localhost:4242"
+var url = "https://naturistic-demo.herokuapp.com"
 var app = new Vue({
     el: "#app",
     data: {
@@ -11,63 +11,7 @@ var app = new Vue({
         category_products:[],
         cart:[],
         cart_empty: "Cart is Empty",
-        products: [
-            {
-                title:"Ocean Water",
-                bigImage:"",
-                image:"../images/wave.jpg",
-                description:"Ocean Water and waves in Southern California. Photo by Lorem Ipsum",
-                tags:["Water"],
-                price:1.00
-                
-            },
-            {
-                title:"Water Fall",
-                bigImage:"",
-                image:"../images/waterfall.jpg",
-                description:"The mystical falls in Niagra, Niagra Falls.",
-                tags: ["Water"],
-                price: 2.00
-                
-            },
-            {
-                title:"Snowy Trees",
-                bigImage:"",
-                image:"../images/sun_snow.jpg",
-                description:"Trees and Snow in Halifax Canada during the winter.",
-                tags: ["Trees"],
-                price: 1.00
-                
-            },
-            {
-                title:"Sunset Mountain",
-                bigImage:"",
-                image:"../images/sun_mountain.jpg",
-                description:"Southern Utah sunset with desert mountains",
-                tags:["Mountains","Sunsets", "Desert"],
-                price: 2.00
-                
-            },
-            {
-                title:"Snow Mountains",
-                bigImage:"",
-                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                image:"../images/snow_mountain1.jpg",
-                description:"Desert Mountain",
-                tags:["Mountains"],
-                price: 1.00
-                
-            },
-            {
-                title:"Underwater",
-                bigImage:"",
-                image:"../images/splashing.jpg",
-                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                tags:["Water"],
-                price: 1.00
-                
-            },
-        ],
+        products: [],
         categories:[
             "Highlights",
             "Water",
@@ -97,31 +41,24 @@ var app = new Vue({
                 })
             })
         },
-        postPrice: function(price){
-            line_items: [
+        postPrice: ()=>{ 
+            var line_items=[]
                 //loop through for each object in the cart. 
-                {
-                    price: price,
-                    quantity: 1
-                }
-            ]
+                this.cart.forEach((product,index)=>{
+                    var price=product.price
+                    let Obj = {
+                        price: price,
+                        quantity: 1
+                    }
+                    line_items.push(Obj);
+                }),
             fetch(`${url}/create-checkout-session`,{
                 method: "POST",
                 headers:{
                     "content-type":"application/json"
                 },
                 body: JSON.stringify(line_items)
-            }).then(function(response){
-                console.log(price)
-                if(response==404){
-                    response.json().then(function(data){
-                        alert(data.msg)
-                })
-                //put else if for what happens if it is a success?
-            }
-
             })
-
         },
 
         searchProducts: function(){
@@ -157,7 +94,6 @@ var app = new Vue({
         filteredCategory: function(){
             if(this.selected_category=="Highlights"){
                 this.category_products=this.products
-               // return this.category_products;
             }
             else{
                     this.category_products=[]
@@ -169,7 +105,6 @@ var app = new Vue({
                         }
                     })
                 })
-               // return this.category_products;
         
             }
     
